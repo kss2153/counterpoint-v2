@@ -21,7 +21,7 @@ jobs:
           - v1-dependencies-{{ checksum "pom.xml" }}
           - v1-dependencies-
 
-      - run: echo $GCLOUD_SERVICE_KEY | base64 --decode | gcloud auth activate-service-account --key-file=-
+      - run: echo ${GCLOUD_SERVICE_KEY} | base64 --decode | gcloud auth activate-service-account --key-file=-
       - run: gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
       - run: mvn dependency:go-offline
 
@@ -29,7 +29,5 @@ jobs:
           paths:
             - ~/.m2
           key: v1-dependencies-{{ checksum "pom.xml" }}
-
-      - run: mvn integration-test
 
       - run: mvn appengine:deploy
