@@ -21,7 +21,7 @@ jobs:
           - v1-dependencies-{{ checksum "pom.xml" }}
           - v1-dependencies-
 
-      - run: echo $GCLOUD_SERVICE_KEY | base64 -d > ~/client-secret.json
+      - run: echo $GCLOUD_SERVICE_KEY | base64 -di > ~/client-secret.json
       - run: gcloud auth activate-service-account --key-file ~/client-secret.json
       - run: gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
       - run: mvn dependency:go-offline
