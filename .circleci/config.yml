@@ -26,7 +26,7 @@ jobs:
           command: |
             set -e
             GCLOUD=${HOME}/google-cloud-sdk/bin/gcloud
-            echo ${GCLOUD_SERVICE_KEY} | base64 --decode --ignore-garbage > ${HOME}/gcloud-service-key.json
+            echo ${GCLOUD_SERVICE_KEY} > ${HOME}/gcloud-service-key.json
 
             if ${GCLOUD} version 2>&1 >> /dev/null; then
                 echo "Cloud SDK is already installed"
