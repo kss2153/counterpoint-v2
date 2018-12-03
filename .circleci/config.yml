@@ -23,7 +23,7 @@ jobs:
 
       - run: echo $GCLOUD_SERVICE_KEY > ~/client-secret.json
       - run: cat ~/client-secret.json
-      - run: gcloud auth activate-service-account --key-file=~/client-secret.json
+      - run: gcloud auth activate-service-account --key-file ~/client-secret.json
       - run: gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
       - run: mvn dependency:go-offline
 
