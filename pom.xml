@@ -73,10 +73,10 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-				<version>2.18.1</version>
-      </plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M1</version>
+            </plugin>
 			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
 				<artifactId>appengine-maven-plugin</artifactId>
@@ -85,7 +85,7 @@
                     <devserver.environment>
                         <MYSQL_HOST>${env.MYSQL_HOST}</MYSQL_HOST>
                         <MYSQL_USER>${env.MYSQL_USER}</MYSQL_USER>
-                        <MYSQL_PWD>${env.MYSQL_PWD}</MYSQL_PWD>
+                        <MYSQL_PWD>${env.MYSQL_USER}</MYSQL_PWD>
                     </devserver.environment>
                 </configuration>
 			</plugin>
