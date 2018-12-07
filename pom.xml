@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.RELEASE</version>
+		<version>1.5.18.RELEASE</version>
 	</parent>
 
 	<properties>
@@ -81,6 +81,13 @@
 				<groupId>com.google.cloud.tools</groupId>
 				<artifactId>appengine-maven-plugin</artifactId>
 				<version>1.3.1</version>
+                <configuration>
+                    <devserver.environment>
+                        <MYSQL_HOST>${env.MYSQL_HOST}</MYSQL_HOST>
+                        <MYSQL_USER>${env.MYSQL_USER}</MYSQL_USER>
+                        <MYSQL_PWD>${env.MYSQL_PWD}</MYSQL_PWD>
+                    </devserver.environment>
+                </configuration>
 			</plugin>
 		</plugins>
 	</build>
